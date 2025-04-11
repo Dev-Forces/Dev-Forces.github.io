@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dev Forces - Cutting Edge Software Development. Coming Soon!" />
+  <title>DevForces - Coming Soon</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <!-- Google Fonts for fancy typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset default browser styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(-45deg, #1e1e1e, #3a3a3a, #1e1e1e, #3a3a3a);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+    }
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .container {
+      text-align: center;
+      z-index: 2;
+    }
+    .logo {
+      max-width: 200px;
+      width: 50%;
+      margin: 20px auto;
+      display: block;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: slideIn 1s ease forwards;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    p.tagline {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      opacity: 0;
+      animation: fadeIn 2.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+    /* Contact Button */
+    .contact-button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background-color: #fff;
+      color: #000;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.3s, background-color 0.3s, color 0.3s;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+      animation-delay: 1s;
+    }
+    .contact-button:hover {
+      transform: scale(1.05);
+      background-color: #0066cc;
+      color: #fff;
+    }
+    /* Floating bubble background */
+    .bubble-container {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: rise 10s infinite ease-in;
+    }
+    @keyframes rise {
+      0% { transform: translateY(0) scale(0.8); opacity: 0.7; }
+      100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+    }
+    .bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 12s; }
+    .bubble:nth-child(2) { width: 60px; height: 60px; left: 20%; animation-duration: 15s; animation-delay: 2s; }
+    .bubble:nth-child(3) { width: 30px; height: 30px; left: 35%; animation-duration: 10s; animation-delay: 1s; }
+    .bubble:nth-child(4) { width: 50px; height: 50px; left: 55%; animation-duration: 14s; animation-delay: 3s; }
+    .bubble:nth-child(5) { width: 80px; height: 80px; left: 70%; animation-duration: 18s; }
+    /* Footer styling */
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      opacity: 0.7;
+      margin-top: auto;
+      z-index: 2;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      h1 { font-size: 2rem; }
+      .contact-button { padding: 10px 20px; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Bubble Background -->
+  <div class="bubble-container">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+  
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Logo -->
+    <img src="DevForcesBlackLogo.png" alt="DevForces Logo" class="logo" />
+
+    <!-- Headline -->
+    <h1>We’re Launching Soon!</h1>
+
+    <!-- Tagline -->
+    <p class="tagline">
+      Dev Forces is your partner in cutting-edge software development. Stay tuned for a tech revolution!
+    </p>
+
+    <!-- Contact Button -->
+    <a href="mailto:fadel.kassab@devforces.io" class="contact-button">Contact</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; <span id="year"></span> Dev Forces
+  </footer>
+
+  <script>
+    // Update the copyright year dynamically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
